@@ -1,0 +1,162 @@
+/*Stile base del documento*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    /*Variabili colori*/
+    --primaryColor: #303134;
+    --secondaryColor: #ffffff;
+    --tertiaryColor: #5d5d5d;
+    --quaternaryColor: #b5b5b5;
+    --quinaryColor: #f39c12;
+    /*Variabili testo*/
+    --primaryText: 45px;
+    --secondaryText: 30px;
+    --tertiaryText: 25px;
+}
+
+body{
+    /*Set colori*/
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    /*Set font*/
+    font-family: Roboto;
+    text-align: center;
+}
+/* Associazione variabili ai titoli */
+h1{
+    font-size: var(--primaryText);
+    margin: 0 auto;
+}
+
+/* Set formattazione pagina */
+div, form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    font-size: var(--tertiaryText);
+}
+
+form > div{
+    flex-direction: row;
+}
+/* Set stile degli input e select*/
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input, select{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 2px;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    border: 2px solid var(--secondaryColor);
+    border-radius: 10px;
+    font-size: var(--tertiaryText);
+    text-align: left;
+    resize: none;
+}
+/* Set background diverso quando si passa sopra un input col mouse */
+input:hover, select:hover{
+    background-color: var(--tertiaryColor);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type='text']:focus, select:focus{
+    outline:none;
+}
+
+/* Colore placeholder */
+input::placeholder{
+    color: var(--quaternaryColor);
+}
+
+input[type="text"], select{
+    width: 220px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid var(--secondaryColor);
+}
+
+select{
+    text-align: center;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
+input[type="submit"], input[type="reset"]{
+    width: 200px;
+    text-align: center;
+}
+
+/*Dimensioni scrollbar*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* colore di sfondo delle scrollbar */
+::-webkit-scrollbar-track {
+    background-color: var(--primaryColor);
+}
+
+/* colore delle scrollbar */
+::-webkit-scrollbar-thumb, hr {
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+}
+
+/* codice per personalizzare i bottoni alle estremità delle scrollbars */
+/* codice per personalizzare l'angolo in basso a destra */
+::-webkit-scrollbar-button, ::-webkit-scrollbar-corner {
+    background-color: var(--tertiaryColor);
+}
+/*Set valori per cambio dimensini della pagina*/
+@media screen and (max-width: 960px){
+    :root{
+        --primaryText: 45px;
+        --secondaryText: 30px;
+        --tertiaryText: 25px;
+    }
+    form, div{
+        padding: 0;
+    }
+    form > div{
+        flex-direction: column;
+    }
+    input, input[type="text"], input[type="submit"], input[type="reset"]{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 80vw;
+        text-align: left;
+    }
+
+    #submit, #reset{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px){
+    :root{
+        --primaryText: 35px;
+        --secondaryText: 20px;
+        --tertiaryText: 15px;
+    }
+    #submit, #reset{
+        width:40vw;
+    }
+}
